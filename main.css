@@ -1,0 +1,19 @@
+.navbar img {
+    width:75% ;
+    height:75% ;
+    margin-left: 9%;
+}
+
+.main {
+    display: inline-flex;
+    width: 100%;
+}
+
+.box1 .box2 .box3 {
+    width: 3
+    3%;
+}
+
+.card img{
+ width:100%;
+}
