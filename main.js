@@ -55,13 +55,14 @@ function getParameterByName(name, url) {
         var platform = record.fields["Platform"];
         var summary = record.fields["Summary"];
         var similarGames = record.fields["Similar Games"];
-        html.push(detailView( game, genre, price, players, photo, platform, summary, similarGames));
+        var trailer = record.fields["Trailer"];
+        html.push(detailView( game, genre, price, players, photo, platform, summary, similarGames, trailer));
         $(".detail-view").append(html);
       }
     );
   };
   
-  var detailView = function(game, genre, price, players, photo, platform, summary, similarGames) {
+  var detailView = function(game, genre, price, players, photo, platform, summary, similarGames, trailer) {
     return `
     <div class="card mb-5" style="max-width: 940px;">
     <div class="row no-gutters">
@@ -73,9 +74,10 @@ function getParameterByName(name, url) {
           <h5 class="card-title">${game}</h5>
           <p class="card-text">Genre: ${genre}</p>
           <p class="card-text">Price: $${price}</p>
-          <p class="card-text">Players: ${players}</p>
-          <p class="card-text">Platform: ${platform}</p>
+          <p class="card-text">Players: ${players} </p>
+          <p class="card-text">Platform: ${platform} </p>
           <p class="card-text">Description: ${summary}</p>
+          <p class="card-text"><a href="${trailer}" target="_blank"> Trailer </a></p>
           <p class="card-text">Similar Games: ${similarGames}</p>
         </div>
       </div>
